@@ -1,5 +1,7 @@
 using authenticationJWT.Models;
 using AuthenticationJWT.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace authenticationJWT.Data
@@ -22,6 +24,20 @@ namespace authenticationJWT.Data
             var user = _context.Users.FirstOrDefault(u => u.Email.Equals(email));
 
             return user;
+        }
+
+        public User GetById(int id)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id.Equals(id));
+
+            return user;
+        }
+
+        public List<User> GetAll()
+        {
+            var users = _context.Users.AsNoTracking().ToList();
+
+            return users;
         }
     }
 }

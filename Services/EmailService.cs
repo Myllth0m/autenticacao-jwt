@@ -7,9 +7,9 @@ namespace authenticationJWT.Services
 {
     public static class EmailService
     {
-        private const string emailDoRemetente = "miltondyama@outlook.com";
-        private const string senha = "onedrive@131804";
-        private const string nomeDoRemetente = "Milton D. Yama";
+        private const string emailDoRemetente = "exemple@outlook.com";
+        private const string senha = "Senha@123";
+        private const string nomeDoRemetente = "Myllth0m";
         private const string dominio = "smtp.office365.com";
         private const int porta = 587;
         private const bool ssl = true;
@@ -24,7 +24,7 @@ namespace authenticationJWT.Services
                 IsBodyHtml = true
             };
 
-            mail.To.Add(new MailAddress("miltondyama@gmail.com"));
+            mail.To.Add(new MailAddress("exemple@gmail.com"));
 
             using SmtpClient smtp = new SmtpClient(dominio, porta);
             smtp.Credentials = new NetworkCredential(emailDoRemetente, senha);

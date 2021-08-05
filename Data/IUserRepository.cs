@@ -1,4 +1,5 @@
 using authenticationJWT.Models;
+using System.Collections.Generic;
 
 namespace AuthenticationJWT.Data
 {
@@ -7,5 +8,9 @@ namespace AuthenticationJWT.Data
         User Create(User user);
 
         User GetByEmail(string email);
+
+        User GetById(int id);
+
+        List<User> GetAll();
     }
 }
